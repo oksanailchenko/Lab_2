@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Завдання</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/js/common.js"></script>
+</head>
+
+<body>
+
+    <div id="addWindow" class="container">
+        <h2>Завдання</h2>
+        <p>Додайте завдання:</p>
+        <form onsubmit="createTask()">
+            <div class="form-group">
+                <label for="taskName">Ім"я:</label>
+                <input type="text" required class="form-control" id="taskName">
+            </div>
+            <div class="form-group">
+                <label for="taskDescription">Опис:</label>
+                <textarea rows="3" required class="form-control" id="taskDescription"></textarea>
+            </div>
+            <button type="submit" class="btn btn-success">Додати завдання</button>
+        </form>
+    </div>
+
+    <div style="display: none;" class="container" id="editWindow">
+        <form onsubmit="updateTask()">
+            <input hidden type="text" id="editTaskId">
+            <div class="form-group">
+                <label for="taskName">Ім"я:</label>
+                <input type="text" required class="form-control" id="editTaskName">
+            </div>
+            <div class="form-group">
+                <label for="taskDescription">Опис:</label>
+                <textarea rows="3" required class="form-control" id="editTaskDescription"></textarea>
+            </div>
+            <button type="submit" class="btn btn-success">Зберегти зміни</button>
+            <button class="btn btn-danger">Відмінити</button>
+        </form>
+    </div>
+
+    <br>
+    <hr>
+    <br>
+
+    <div class="container">
+        <table class="table" id="tasks"></table>
+    </div>
+
+
+</body>
+
+</html>
